@@ -7,11 +7,20 @@ public class Principal {
         ArrayList<String> redesSocilaes = crearSocilaes();
         Cafeteria cafeteria1 = new Cafeteria("Las arucarias","UFRO",redesSocilaes,cafes1);
         System.out.println(cafeteria1.toString());
-        cafeteria1.eliminarCafe(2);
-        System.out.println(cafeteria1.toString());
+
+        eliminarCafe(cafeteria1);
+        agregarCafe(cafeteria1);
+        buscarCafes(cafeteria1);
+    }
+
+    private static void agregarCafe(Cafeteria cafeteria1) {
         cafeteria1.agregarCafe(new Cafe("30","45","grande"));
         System.out.println(cafeteria1.toString());
-        buscarCafes(cafeteria1);
+    }
+
+    private static void eliminarCafe(Cafeteria cafeteria1) {
+        cafeteria1.eliminarCafe(2);
+        System.out.println(cafeteria1.toString());
     }
 
     private static void buscarCafes(Cafeteria cafeteria1) {
@@ -19,7 +28,14 @@ public class Principal {
         System.out.println("que cafe quiere buscar (chico,mediano,grande)");
         System.out.println("Escribalo bien porfavor :D");
         String tamano = sc.next();
-        cafeteria1.buscarCafe(tamano);
+        ArrayList<Cafe> cafesEncontrados = cafeteria1.buscarCafe(tamano);
+        imprimirCafes(cafesEncontrados);
+    }
+
+    private static void imprimirCafes(ArrayList<Cafe> cafesEncontrados) {
+        for (Cafe i: cafesEncontrados){
+            System.out.println(i.toString());
+        }
     }
 
     private static ArrayList<String> crearSocilaes() {

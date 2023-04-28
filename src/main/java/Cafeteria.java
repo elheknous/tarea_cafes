@@ -51,26 +51,14 @@ public class Cafeteria {
     public void agregarCafe(Cafe cafe){
         this.cafes.add(cafe);
     }
-    public void buscarCafe(String tamano){
+    public ArrayList<Cafe> buscarCafe(String tamano){
+        ArrayList<Cafe> elementos = new ArrayList<>();
         for (int i = 0; i < cafes.size(); i++) {
-            if (cafes.get(i).getTamano().equals(tamano)) {
-                System.out.println(cafes.get(i).toString());
+            if (tamano.equals(cafes.get(i).getTamano())){
+                elementos.add(cafes.get(i));
             }
         }
-        for (int i = 0; i < cafes.size(); i++) {
-
-            if (cafes.get(i).getTamano().equals(tamano)) {
-                System.out.println(cafes.get(i).toString());
-
-            }
-        }
-        for (int i = 0; i < cafes.size(); i++) {
-
-            if (cafes.get(i).getTamano().equals(tamano)) {
-                System.out.println(cafes.get(i).toString());
-
-            }
-        }
+        return elementos;
 
     }
 
