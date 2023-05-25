@@ -5,12 +5,21 @@ public class Cafeteria {
     private String direccion;
     private ArrayList<String > redesSocioales;
     private ArrayList<Cafe> cafes;
+    private ArrayList<Alfajor> alfajores;
 
     public Cafeteria(String nombre, String direccion, ArrayList<String> redesSocioales, ArrayList<Cafe> cafes) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.redesSocioales = redesSocioales;
         this.cafes = cafes;
+    }
+
+    public Cafeteria(String nombre, String direccion, ArrayList<String> redesSocioales, ArrayList<Cafe> cafes, ArrayList<Alfajor> alfajores) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.redesSocioales = redesSocioales;
+        this.cafes = cafes;
+        this.alfajores = alfajores;
     }
 
     public String getNombre() {
@@ -63,7 +72,6 @@ public class Cafeteria {
     }
 
 
-
     @Override
     public String toString() {
         return "Cafeteria{" +
@@ -71,6 +79,7 @@ public class Cafeteria {
                 ", direccion='" + direccion + '\'' +
                 ", redesSocioales=" + redesSocioales +
                 ", cafes=" + cafes +
+                ", alfajores=" + alfajores +
                 '}';
     }
 }
